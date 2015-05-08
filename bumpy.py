@@ -2,7 +2,7 @@
 # Moves: Forward, Reverse, turn Right, turn Left, Stop - then repeat
 # Press Ctrl-C to stop
 #
-# Run using: sudo python motorTest.py
+# Run using: sudo python bumpy.py
 
 import sys
 import tty
