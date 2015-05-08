@@ -65,19 +65,19 @@ def reverse(speed = SPEED):
 
 def spin_left(speed = SPEED):
   _switch_off(lb, rf)
-  _switch_on(speed, lf, rb)
+  _switch_on(100, lf, rb)
 
 def spin_right(speed = SPEED):
   _switch_off(lf, rb)
-  _switch_on(speed, lb, rf)
+  _switch_on(100, lb, rf)
 
 def left(speed = SPEED):
   _switch_off(lb, rf)
-  _switch_on(speed, lf)
+  _switch_on(100, lf)
 
 def right(speed = SPEED):
   _switch_off(lf, rb)
-  _switch_on(speed, rf)
+  _switch_on(100, rf)
 
 def stop():
   _switch_off(lf,rf,lb,rb)
@@ -139,20 +139,20 @@ def cursor_loop():
       print 'Reverse', speed
       last_func = reverse
     elif keyp == 'p' or ord(keyp) == 18:
-      right(speed)
-      print 'Right', speed
-      last_func = right
-    elif keyp == 'o' or ord(keyp) == 19:
-      left(speed)
-      print 'Left', speed
-      last_func = left
-    elif keyp == 'i':
       spin_right(speed)
       print 'Spin Right', speed
-      last_func = spin_right
-    elif keyp == 'u':
+      last_func = right
+    elif keyp == 'o' or ord(keyp) == 19:
       spin_left(speed)
       print 'Spin Left', speed
+      last_func = left
+    elif keyp == 'i':
+      right(speed)
+      print 'Right', speed
+      last_func = spin_right
+    elif keyp == 'u':
+      left(speed)
+      print 'Left', speed
       last_func = spin_left
     elif keyp == '.' or keyp == '>':
       speed = min(100, speed+5)
